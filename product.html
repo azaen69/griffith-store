@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product | Griffith Store</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+
+</head>
+
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+<a href="griffith.html">
+<img src="Griffith Logo.png" alt="Griffith Logo">
+</a>
+</div>
+
+<nav>
+<a href="griffith.html">Home</a>
+<a href="griffith.html#products">Shop</a>
+<a href="#">Contact</a>
+</nav>
+
+<div class="cart">
+🛒 <span id="cart-count">0</span>
+</div>
+
+</header>
+
+
+<section class="product-page">
+
+<img id="product-img" src="" alt="Product Image">
+
+<div class="product-info">
+
+<h1 id="product-name"></h1>
+
+<p id="product-price"></p>
+
+<select>
+<option>Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<br><br>
+
+<button onclick="addCart()">Add to Cart</button>
+
+<br><br>
+
+<a href="griffith.html#products">
+<button class="back-btn">← Back to Shop</button>
+</a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Griffith Streetwear</p>
+
+</footer>
+
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("product-name").innerText =
+params.get("name");
+
+document.getElementById("product-price").innerText =
+"₹" + params.get("price");
+
+document.getElementById("product-img").src =
+params.get("img");
+
+</script>
+
+</body>
+
+</html>
